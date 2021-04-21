@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "model": "BMW X6",
+    "color": "black"
+  },
+  {
+    "id": 2,
+    "model": "KIA 2021",
+    "color": "red"
+  },
+  {
+    "id": 3,
+    "model": "BMW 2021",
+    "color": "blue"
+  },
+  {
+    "id": 4,
+    "model": "Nissan 2020",
+    "color": "white"
+  },
+  {
+    "id": 5,
+    "model": "Nissan 2018",
+    "color": "green"
+  },
+  {
+    "id": 6,
+    "model": "Honda 2021",
+    "color": "black"
+  },
+  {
+    "id": 7,
+    "model": "BMW X5",
+    "color": "black"
+  },
+  {
+    "id": 8,
+    "model": "Benz 2017",
+    "color": "gray"
+  },
+  {
+    "id": 9,
+    "model": "BMW 2018",
+    "color": "black"
+  },
+  {
+    "id": 10,
+    "model": "BMW 2019",
+    "color": "red"
+  },
+  {
+    "id": 11,
+    "model": "BMW 2010",
+    "color": "orange"
+  },
+  {
+    "id": 12,
+    "model": "Opel 2021",
+    "color": "yellow"
+  }
+]
