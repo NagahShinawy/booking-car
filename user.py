@@ -1,6 +1,8 @@
 """
 created by Nagaj at 21/04/2021
 """
+
+import datetime
 from car import load_cars
 from constant import (
     CAR_DETAILS,
@@ -13,12 +15,19 @@ from constant import (
 
 
 class User:
+    """
+    handles user actions
+    """
     cars: list = load_cars()
 
     def __init__(self):
         self.booked_car = None
 
     def list_cars(self):
+        """
+
+        :return: show all cars to user
+        """
         for car in self.cars:
             print(
                 CAR_DETAILS.format(
@@ -27,11 +36,20 @@ class User:
             )
 
     def book_car(self, car_id):
+        """
+
+        :param car_id: car id to book it
+        :return:
+        """
         self.booked_car = self.__find_car_by_id(car_id)
         print(BOOKED_CAR.format(booked_car=self.booked_car))
         self.cars.remove(self.booked_car)
 
     def cancel_booking(self):
+        """
+        cancel booking
+        :return:
+        """
         if self.booked_car is not None:
             self.cars.append(self.booked_car)
             print(CANCEL_BOOKING.format(self.booked_car))
@@ -39,6 +57,10 @@ class User:
             print(NO_BOOKING_TO_CANCEL)
 
     def retrieve_car(self):
+        """
+
+        :return: retrieve the car after use it
+        """
         if self.booked_car is not None:
 
             self.cars.append(self.booked_car)
@@ -48,9 +70,16 @@ class User:
             print(NO_BOOKING_TO_RETRIEVE)
 
     def rate_service(self):
-        pass
+        """
+        :return:
+        """
 
     def __find_car_by_id(self, car_id):
+        """
+
+        :param car_id: use car id to get car
+        :return: car
+        """
         for car in self.cars:
             if car["id"] == car_id:
                 return car
