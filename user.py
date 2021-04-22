@@ -3,7 +3,8 @@ created by Nagaj at 21/04/2021
 """
 
 import datetime
-from car import load_cars
+
+from car import load_cars, save_to_history, get_booking_history
 from constant import (
     CAR_DETAILS,
     BOOKED_CAR,
@@ -19,6 +20,7 @@ class User:
     handles user actions
     """
     cars: list = load_cars()
+    history = get_booking_history()
 
     def __init__(self):
         self.booked_car = None
@@ -65,6 +67,9 @@ class User:
 
             self.cars.append(self.booked_car)
             print(BACK_CAR.format(self.booked_car))
+            save_to_history(history=self.history, booking={"car": self.booked_car,
+                                                           "datetime": datetime.datetime.strftime(
+                                                               datetime.datetime.now(), "%Y-%m-%d %H:%M:%S")})
             self.booked_car = None
         else:
             print(NO_BOOKING_TO_RETRIEVE)

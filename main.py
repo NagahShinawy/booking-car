@@ -6,6 +6,6 @@ from user import User
 if __name__ == "__main__":
     john = User()
     john.list_cars()
-    john.book_car(11)
+    john.book_car(5)
     john.retrieve_car()
     john.cancel_booking()

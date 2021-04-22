@@ -16,7 +16,7 @@ def load_cars():
     return cars
 
 
-def booking_history():
+def get_booking_history():
     """
 
     :return: all booking were done
@@ -26,8 +26,11 @@ def booking_history():
     return booking
 
 
-def to_history():
+def save_to_history(history: list, booking: dict):
     """
 
     :return: save booking to history
     """
+    history.append(booking)
+    with open("booking.json", "w") as booking_file:
+        json.dump(history, booking_file, indent=4)
