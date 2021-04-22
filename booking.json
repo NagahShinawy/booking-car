@@ -1,0 +1,82 @@
+[
+    {
+        "car": {
+            "id": 11,
+            "model": "BMW 2010",
+            "color": "orange"
+        },
+        "datetime": "2021-04-22 10:30:06"
+    },
+    {
+        "car": {
+            "id": 11,
+            "model": "BMW 2010",
+            "color": "orange"
+        },
+        "datetime": "2021-04-22 10:30:24"
+    },
+    {
+        "car": {
+            "id": 7,
+            "model": "BMW X5",
+            "color": "black"
+        },
+        "datetime": "2021-04-22 10:30:44"
+    },
+    {
+        "car": {
+            "id": 7,
+            "model": "BMW X5",
+            "color": "black"
+        },
+        "datetime": "2021-04-22 10:38:30"
+    },
+    {
+        "car": {
+            "id": 5,
+            "model": "Nissan 2018",
+            "color": "green"
+        },
+        "datetime": "2021-04-22 10:38:39"
+    },
+    {
+        "car": {
+            "id": 7,
+            "model": "BMW X5",
+            "color": "black"
+        },
+        "datetime": "2021-04-22 14:07:40"
+    },
+    {
+        "car": {
+            "id": 9,
+            "model": "BMW 2018",
+            "color": "black"
+        },
+        "datetime": "2021-04-22 14:07:59"
+    },
+    {
+        "car": {
+            "id": 2,
+            "model": "KIA 2021",
+            "color": "red"
+        },
+        "datetime": "2021-04-22 15:01:07"
+    },
+    {
+        "car": {
+            "id": 5,
+            "model": "Nissan 2018",
+            "color": "green"
+        },
+        "datetime": "2021-04-22 15:02:43"
+    },
+    {
+        "car": {
+            "id": 6,
+            "model": "Honda 2021",
+            "color": "black"
+        },
+        "datetime": "2021-04-22 21:44:31"
+    }
+]
