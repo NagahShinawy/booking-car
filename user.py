@@ -5,9 +5,10 @@ created by Nagaj at 21/04/2021
 import datetime
 
 from car import load_cars, save_to_history, get_booking_history
-from cmd import CMD
+from cmd import CMD, AcceptOrRefuse
 from constants import (
     CAR_DETAILS,
+    VALID_CARS_IDS,
     BOOKED_CAR,
     YOUR_CAR,
     NO_CAR_TO_SHOW,
@@ -20,8 +21,13 @@ from constants import (
     LIST,
     CANCEL,
     BOOK,
-    RETRIEVE, SHOW
+    RETRIEVE,
+    SHOW,
+    RATE_US_MSG,
+    ACCEPT,
+    RATE_TEXT, BYE,
 )
+from rate import RateUs
 from validation import validate_car_id
 
 
@@ -29,6 +35,7 @@ class User:
     """
     handles user actions
     """
+
     cars: list = load_cars()
     cars_ids = [car["id"] for car in cars]
     history = get_booking_history()
@@ -85,9 +92,15 @@ class User:
 
             self.cars.append(self.booked_car)
             print(BACK_CAR.format(self.booked_car))
-            save_to_history(history=self.history, booking={"car": self.booked_car,
-                                                           "datetime": datetime.datetime.strftime(
-                                                               datetime.datetime.now(), "%Y-%m-%d %H:%M:%S")})
+            save_to_history(
+                history=self.history,
+                booking={
+                    "car": self.booked_car,
+                    "datetime": datetime.datetime.strftime(
+                        datetime.datetime.now(), "%Y-%m-%d %H:%M:%S"
+                    ),
+                },
+            )
             self.booked_car = None
         else:
             print(NO_BOOKING_TO_RETRIEVE)
@@ -118,7 +131,7 @@ class User:
                 self.show_car()
 
             if command == BOOK:
-                car_id = int(input("Enter Valid Car Id from List {}".format(self.cars_ids)))
+                car_id = int(input(VALID_CARS_IDS.format(self.cars_ids)))
                 self.book_car(validate_car_id(cars_ids=self.cars_ids, car_id=car_id))
 
             if command == CANCEL:
@@ -128,7 +141,11 @@ class User:
                 self.retrieve_car()
 
             command = self.run_command()
-        # todo : apply rating class
+
+        if self.is_accept_rating(RATE_US_MSG) == ACCEPT:
+            rate = RateUs(input(RATE_TEXT))
+            rate.save()
+        print(BYE)
 
     @staticmethod
     def run_command(opening_msg=OPENING_MSG):
@@ -140,3 +157,12 @@ class User:
         command = input(opening_msg)
         cmd = CMD(command)
         return cmd
+
+    @staticmethod
+    def is_accept_rating(msg):
+        """
+
+        :param msg:
+        :return:
+        """
+        return AcceptOrRefuse(input(msg))
