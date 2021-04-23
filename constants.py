@@ -42,3 +42,7 @@ BYE = "Done. Goodbye"
 
 SHORT_TEXT = 'Short Text <{}>, Min Text Length Is 3'
 ALL_CHARS_ARE_NUMBERS = "All Of Your Text <{}> Are Numbers!. Please Type Valid Text"
+
+# ########################  Datetime Format  ########################
+
+DATETIME_FORMAT = "%Y-%m-%d %H:%M:%S"

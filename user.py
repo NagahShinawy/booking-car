@@ -25,6 +25,7 @@ from constants import (
     SHOW,
     RATE_US_MSG,
     ACCEPT,
+    DATETIME_FORMAT,
     RATE_TEXT, BYE,
 )
 from rate import RateUs
@@ -97,7 +98,7 @@ class User:
                 booking={
                     "car": self.booked_car,
                     "datetime": datetime.datetime.strftime(
-                        datetime.datetime.now(), "%Y-%m-%d %H:%M:%S"
+                        datetime.datetime.now(), DATETIME_FORMAT
                     ),
                 },
             )

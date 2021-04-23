@@ -4,7 +4,7 @@ created by Nagaj at 22/04/2021
 import datetime
 import json
 
-from constants import THANKS
+from constants import THANKS, DATETIME_FORMAT
 from exceptions import ShortLenError, TextAsNumber
 
 
@@ -21,7 +21,7 @@ class RateUs:
     def __init__(self, text: str):
         self.text = self.set_text(text)
         self.timestamp = datetime.datetime.strftime(
-            datetime.datetime.now(), "%Y-%m-%d %H:%M:%S"
+            datetime.datetime.now(), DATETIME_FORMAT
         )
 
     def __str__(self):
@@ -38,7 +38,7 @@ class RateUs:
         single_rate = {
             "text": self.text,
             "datetime": datetime.datetime.strftime(
-                datetime.datetime.now(), "%Y-%m-%d %H:%M:%S"
+                datetime.datetime.now(), DATETIME_FORMAT
             ),
 
         }
