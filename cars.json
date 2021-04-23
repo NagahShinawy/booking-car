@@ -58,5 +58,25 @@
     "id": 12,
     "model": "Opel 2021",
     "color": "yellow"
+  },
+  {
+    "id": 13,
+    "model": "Mir Benz 2015",
+    "color": "black"
+  },
+  {
+    "id": 14,
+    "model": "BMW 2000",
+    "color": "red"
+  },
+  {
+    "id": 15,
+    "model": "Opel 2001",
+    "color": "white"
+  },
+  {
+    "id": 16,
+    "model": "Nissan 2007",
+    "color": "blue"
   }
 ]
