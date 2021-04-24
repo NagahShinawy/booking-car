@@ -111,15 +111,14 @@ class User:
         :return:
         """
 
-    def __find_car_by_id(self, car_id):
+    def __find_car_by_id(self, car_id: int):
         """
 
-        :param car_id: use car id to get car
-        :return: car
+        :param car_id: use car id to get car from car list
+        :return: car obj
         """
-        for car in self.cars:
-            if car["id"] == car_id:
-                return car
+        car = self.cars[car_id - 1]  # use id - 1 to get car index
+        return car
 
     def event_loop(self):
         command = self.run_command()
